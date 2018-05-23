@@ -90,4 +90,8 @@ null
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L369)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L340)
+>>>>>>> e0f92e0b... Update move docs (#10734)

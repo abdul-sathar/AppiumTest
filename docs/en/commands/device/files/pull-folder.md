@@ -96,4 +96,8 @@ A string of Base64 encoded data, representing a zip archive of the contents of t
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L466)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L393)
+>>>>>>> e0f92e0b... Update move docs (#10734)

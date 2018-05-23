@@ -94,4 +94,8 @@ Time on the device (`string`)
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L333)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L304)
+>>>>>>> e0f92e0b... Update move docs (#10734)

@@ -91,4 +91,8 @@ The information type of the system state which is supported to read as like cpu,
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L354)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L325)
+>>>>>>> e0f92e0b... Update move docs (#10734)

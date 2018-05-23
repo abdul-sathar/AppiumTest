@@ -94,4 +94,8 @@ Name of the current [activity](https://developer.android.com/reference/android/a
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L395)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L366)
+>>>>>>> e0f92e0b... Update move docs (#10734)

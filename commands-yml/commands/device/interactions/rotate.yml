@@ -76,5 +76,9 @@ endpoint:
       description: The length of hold time for the specified gesture, in seconds.
 
 # Links to specifications. Should link to at least one specification
+<<<<<<< HEAD
 specifications:
+=======
+specifications: 
+>>>>>>> e0f92e0b... Update move docs (#10734)
   jsonwp: https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L361

@@ -100,4 +100,8 @@ Return true if installed, false if not (`boolean`)
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L434)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L378)
+>>>>>>> e0f92e0b... Update move docs (#10734)

@@ -95,4 +95,8 @@ The tag name of the element (`string`)
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L314)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L285)
+>>>>>>> e0f92e0b... Update move docs (#10734)

@@ -92,4 +92,8 @@ True if the device is locked, false if not (`boolean`)
 
 ## See Also
 
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L342)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L313)
+>>>>>>> e0f92e0b... Update move docs (#10734)

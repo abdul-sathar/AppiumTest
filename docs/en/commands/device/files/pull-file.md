@@ -97,7 +97,11 @@ Contents of file in base64 (`string`)
 ## See Also
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L463)
 =======
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L390)
 >>>>>>> e0f92e0b... Update move docs (#10734)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L463)
+>>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)

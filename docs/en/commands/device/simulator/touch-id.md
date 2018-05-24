@@ -112,8 +112,12 @@ null
 ## See Also
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L497)
 =======
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L424)
 >>>>>>> e0f92e0b... Update move docs (#10734)
+=======
+* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L497)
+>>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)
 * [Appium Docs](https://github.com/appium/appium-xcuitest-driver/blob/master/docs/touch-id.md)

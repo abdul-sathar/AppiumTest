@@ -89,12 +89,4 @@ The available performance data types (cpuinfo|batteryinfo|networkinfo|memoryinfo
 
 ## See Also
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L351)
-=======
-* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L322)
->>>>>>> e0f92e0b... Update move docs (#10734)
-=======
-* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L351)
->>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)

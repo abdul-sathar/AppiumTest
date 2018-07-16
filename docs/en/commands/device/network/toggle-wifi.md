@@ -90,12 +90,4 @@ null
 
 ## See Also
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 * [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L475)
-=======
-* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L402)
->>>>>>> e0f92e0b... Update move docs (#10734)
-=======
-* [JSONWP Specification](https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L475)
->>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)

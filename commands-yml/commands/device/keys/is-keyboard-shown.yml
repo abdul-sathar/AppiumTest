@@ -53,12 +53,4 @@ endpoint:
 
 # Links to specifications. Should link to at least one specification
 specifications:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  jsonwp: routes.js
-=======
   jsonwp: https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L384
->>>>>>> e0f92e0b... Update move docs (#10734)
-=======
-  jsonwp: routes.js
->>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)

@@ -64,16 +64,6 @@ driver_support:
   windows:
     windows: false
 client_support:
-<<<<<<< HEAD
-  java: false
-  python: false
-  ruby: false
-  php: false
-  csharp: false
-  javascript_wd: false
-  javascript_wdio: false
-  
-=======
   java: true
   python: true
   ruby: true
@@ -81,8 +71,6 @@ client_support:
   csharp: true
   javascript_wd: true
   javascript_wdio: true
-
->>>>>>> 27df4094... Add mobile: getContexts to docs (#10814)
 
 # Information about the HTTP endpoints
 endpoint:

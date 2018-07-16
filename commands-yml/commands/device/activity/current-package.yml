@@ -64,13 +64,5 @@ endpoint:
       description: Name of the current [package](https://developer.android.com/reference/java/lang/Package.html)
 
 # Links to specifications. Should link to at least one specification
-<<<<<<< HEAD
-<<<<<<< HEAD
 specifications:
-=======
-specifications: 
->>>>>>> e0f92e0b... Update move docs (#10734)
-=======
-specifications:
->>>>>>> a9c6eb57... Dynamically figure out line numbers to routes file when necessary (#10742)
   jsonwp: https://github.com/appium/appium-base-driver/blob/master/lib/protocol/routes.js#L369

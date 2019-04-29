@@ -53,7 +53,6 @@ jobs:
       displayName: Rename appium.zip to specific name
     - task: GithubRelease@0
       inputs:
-        githubConnection: appium
         repositoryName: appium/appium
         tagSource: manual
         tag: $(Build.BuildNumber)      

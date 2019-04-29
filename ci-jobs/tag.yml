@@ -53,9 +53,10 @@ jobs:
       displayName: Rename appium.zip to specific name
     - task: GithubRelease@0
       inputs:
-      githubConnection: zenithworks
-      repositoryName: appium/appium
-      tagSource: manual
-      tag: $(Build.BuildNumber)      
-      assets: appium-xcode-$(XCODE_VERSION).zip
+        githubConnection: appium
+        repositoryName: appium/appium
+        tagSource: manual
+        tag: $(Build.BuildNumber)      
+        assets: |
+          appium-xcode-$(XCODE_VERSION).zip
       displayName: Create GitHub Release

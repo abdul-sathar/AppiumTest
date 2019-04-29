@@ -25,7 +25,9 @@ jobs:
       displayName: Fully build XCUITestDriver
     - script: |
         pushd node_modules/appium-xcuitest-driver/WebDriverAgent
+        echo '=== running bootstrap.sh ==='
         ./Scripts/bootstrap.sh
+        echo '=== running bundle.sh ==='
         ./Scripts/build.sh        
         popd
       displayName: Run WebdriverAgent build scripts for Xcode $(XCODE_VERSION)
@@ -40,3 +42,6 @@ jobs:
     # TODO: Add some sanity tests here
     - script: mv appium.zip appium-xcode-$(XCODE_VERSION).zip
       displayName: Rename appium.zip to specific name
+    - task: PublishPipelineArtifact@0
+      inputs:
+        artifactName: 'appium-xcode-$(XCODE_VERSION).zip'

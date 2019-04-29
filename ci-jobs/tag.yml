@@ -54,7 +54,6 @@ jobs:
     - task: GithubRelease@0
       inputs:
         repositoryName: appium/appium
-        tag: $(Build.BuildNumber)      
         assets: |
           appium-xcode-$(XCODE_VERSION).zip
       displayName: Create GitHub Release

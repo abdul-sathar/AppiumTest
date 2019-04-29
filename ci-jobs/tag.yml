@@ -28,7 +28,7 @@ jobs:
         ./Scripts/bootstrap.sh
         ./Scripts/build.sh        
         popd
-      displayName: Run WebdriverAgent build scripts for Xcode ${{ parameters.xcodeVersion }}
+      displayName: Run WebdriverAgent build scripts for Xcode $(XCODE_VERSION)
     - script: npm run build
       displayName: npm run build
     - script: npm prune --production

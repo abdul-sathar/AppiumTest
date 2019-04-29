@@ -53,7 +53,7 @@ jobs:
       displayName: Rename appium.zip to specific name
     - task: GithubRelease@0
       inputs:
-        githubConnection: appium
+        githubConnection: github
         repositoryName: appium/appium
         assets: |
           appium-xcode-$(XCODE_VERSION).zip

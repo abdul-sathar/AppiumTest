@@ -1,11 +1,20 @@
 jobs:
   - job: bundle_and_upload_appium_zip
+    strategy:
+      matrix:
+        Xcode10_2:
+          XCODE_VERSION: 10.2
+        Xcode10_1:
+          XCODE_VERSION: 10.1
+        Xcode10:
+          XCODE_VERSION: 10
+        Xcode9_4_1:
+          XCODE_VERSION: 9.4.1
     pool:
       vmImage: 'macOS 10.14'
     variables:
       CC: gcc
       CXX: g++
-      XCODE_VERSION: 10.2
     steps:
     - script: gcc --version
       displayName: Print GCC Version
@@ -27,7 +36,7 @@ jobs:
         pushd node_modules/appium-xcuitest-driver/WebDriverAgent
         echo '=== running bootstrap.sh ==='
         ./Scripts/bootstrap.sh
-        echo '=== running bundle.sh ==='
+        echo '=== running build.sh ==='
         ./Scripts/build.sh        
         popd
       displayName: Run WebdriverAgent build scripts for Xcode $(XCODE_VERSION)
@@ -45,3 +54,4 @@ jobs:
     - task: PublishPipelineArtifact@0
       inputs:
         artifactName: 'appium-xcode-$(XCODE_VERSION).zip'
+      displayName: Publish Appium Zip

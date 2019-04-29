@@ -51,7 +51,11 @@ jobs:
     # TODO: Add some sanity tests here
     - script: mv appium.zip appium-xcode-$(XCODE_VERSION).zip
       displayName: Rename appium.zip to specific name
-    - task: PublishPipelineArtifact@0
+    - task: GithubRelease@0
       inputs:
-        artifactName: 'appium-xcode-$(XCODE_VERSION).zip'
-      displayName: Publish Appium Zip
+      githubConnection: zenithworks
+      repositoryName: appium/appium
+      tagSource: manual
+      tag: $(Build.BuildNumber)      
+      assets: appium-xcode-$(XCODE_VERSION).zip
+      displayName: Create GitHub Release

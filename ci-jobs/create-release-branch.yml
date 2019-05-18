@@ -32,5 +32,7 @@ jobs:
   - task: npmAuthenticate@0
     inputs:
       customEndpoint: //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-  - script: npm publish --tag phony # TODO: Change this back to rc when it works
-    displayName: Publish the release candidate
+  - task: Npm@1
+    inputs:
+      command: publish
+      publishEndpoint: //registry.npmjs.org/:_authToken=$(NPM_TOKEN)

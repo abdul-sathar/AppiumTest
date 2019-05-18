@@ -29,5 +29,5 @@ jobs:
       git tag v${MINOR_VERSION}.0-rc.0
       git push --tags triager
     displayName: Git Tag the release candidate
-  - script: npm publish --tag rc
+  - script: npm publish --tag phony # TODO: Change this back to rc when it works
     displayName: Publish the release candidate

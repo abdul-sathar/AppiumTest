@@ -23,7 +23,7 @@ jobs:
       git checkout -b ${MINOR_VERSION}
       git add .
       git commit -n -m 'Release branch ${MINOR_VERSION}'
-      git push --set-upstream triager HEAD:${MINOR_VERSION}
+      git push --force --set-upstream triager HEAD:${MINOR_VERSION}
     displayName: Create the MINOR_VERSION branch
   - script: |
       git tag v${MINOR_VERSION}.0-rc.0

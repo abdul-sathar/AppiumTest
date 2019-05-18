@@ -29,9 +29,6 @@ jobs:
       git tag v${MINOR_VERSION}.0-rc.0
       git push --tags triager
     displayName: Git Tag the release candidate
-  - task: npmAuthenticate@0
-    inputs:
-      customEndpoint: //registry.npmjs.org/:_authToken=${NPM_TOKEN}
   - task: Npm@1
     inputs:
       command: publish

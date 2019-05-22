@@ -19,7 +19,17 @@ jobs:
       git commit -n -m 'Release branch ${BRANCH}'
       git push --force --set-upstream triager HEAD:${BRANCH}
     displayName: Create the MINOR_VERSION branch
-  - script: |
-      git tag v${MINOR_VERSION}.0-rc.0
-      git push --tags triager
-    displayName: Git Tag the release candidate
+  - template: templates/tag-and-publish.yml
+    parameters:
+      TAG: ${MINOR_VERSION}.0-rc.0
+    displayName: Tag and publish release candidate
+
+  # Go back to master branch and bump the minor version and create a beta
+  #- script: |
+      #git checkout master
+      #git reset --hard triager/master
+      #node ./ci-jobs/scripts/bump-minor-version.js
+      #rm -rf npm-shrinkwrap.json
+      #npm shrinkwrap
+      #git push triager master
+    #displayName: Bump minor version and set beta to zero

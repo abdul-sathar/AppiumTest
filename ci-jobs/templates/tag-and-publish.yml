@@ -6,6 +6,10 @@ steps:
       npm shrinkwrap
     displayName: Update package.json and npm-shrinkwrap.json versions
   - script: |
+      git add npm-shrinkwrap.json package.json
+      git commit -n -m '${TAG}'
+      git push triager
+  - script: |
       git tag v${{ parameters.TAG }}
       git push --tags triager
     displayName: Git Tag v${{ parameters.TAG }}

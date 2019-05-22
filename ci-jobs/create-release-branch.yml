@@ -21,9 +21,9 @@ jobs:
     displayName: Create the MINOR_VERSION branch
   - template: templates/tag-and-publish.yml
     parameters:
-      TAG: ${MINOR_VERSION}.0-rc.0
+      TAG: ${MINOR_VERSION}.0-fake.0
 
-  # Go back to master branch and bump the minor version and create a beta
+  # Switch back to master branch, bump the minor version and create a beta
   #- script: |
       #git checkout master
       #git reset --hard triager/master

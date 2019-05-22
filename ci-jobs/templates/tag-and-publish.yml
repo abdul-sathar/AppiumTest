@@ -1,5 +1,3 @@
-parameters:
-  TAG: ''
 steps:
   - script: |
       export TAG=${{ parameters.TAG }}

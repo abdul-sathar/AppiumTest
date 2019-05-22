@@ -22,7 +22,6 @@ jobs:
   - template: templates/tag-and-publish.yml
     parameters:
       TAG: ${MINOR_VERSION}.0-rc.0
-    displayName: Tag and publish release candidate
 
   # Go back to master branch and bump the minor version and create a beta
   #- script: |

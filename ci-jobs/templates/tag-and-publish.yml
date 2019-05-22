@@ -2,14 +2,14 @@ parameters:
   TAG: ''
 steps:
   - script: |
-      export TAG=${{ TAG }}
+      export TAG=${{ parameters.TAG }}
       node ./ci-jobs/scripts/set-tag.js
       rm -rf npm-shrinkwrap.json
       npm shrinkwrap
     displayName: Update package.json and npm-shrinkwrap.json versions
   - script: |
-      git tag v${{ TAG }}
+      git tag v${{ parameters.TAG }}
       git push --tags triager
-    displayName: Git Tag v${{ TAG }}
+    displayName: Git Tag v${{ parameters.TAG }}
   - script: npm publish --tag $(node ./ci-jobs/scripts/parse-npm-tag.js)
     displayName: Publish it

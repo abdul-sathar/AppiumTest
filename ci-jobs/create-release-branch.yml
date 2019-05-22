@@ -12,12 +12,12 @@ jobs:
   - script: node ./ci-jobs/scripts/set-rc-tag.js
     displayName: Update package.json version to rc
   - script: |
-      export MINOR_VERSION=releases/$(node ./ci-jobs/scripts/output-minor-version.js)
-      echo "Creating branch ${BRANCH}"
-      git checkout -b ${BRANCH}
+      export MINOR_VERSION=$(node ./ci-jobs/scripts/output-minor-version.js)
+      echo "Creating branch ${MINOR_VERSION}"
+      git checkout -b ${MINOR_VERSION}
       git add .
-      git commit -n -m 'Release branch ${BRANCH}'
-      git push --force --set-upstream triager HEAD:${BRANCH}
+      git commit -n -m 'Release branch ${MINOR_VERSION}'
+      git push --force --set-upstream triager HEAD:${MINOR_VERSION}
     displayName: Create the MINOR_VERSION branch
   - template: templates/tag-and-publish.yml
     parameters:

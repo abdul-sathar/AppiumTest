@@ -29,7 +29,7 @@ jobs:
       git tag v${MINOR_VERSION}.0-rc.0
       git push --tags triager
     displayName: Git Tag the release candidate
-  - task: Npm@1
-    inputs:
-      command: publish
-      publishEndpoint: //registry.npmjs.org/:_authToken=$(NPM_TOKEN)
+  - script: |
+      npm config set registry //registry.npmjs.org/:_authToken=$(NPM_TOKEN)
+      npm publish --tag fake # TODO: Replace fake with release candidate
+    displayName: Publish the release candidate

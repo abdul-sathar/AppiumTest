@@ -1,6 +1,5 @@
 steps:
   - script: |
-      export TAG=${{ parameters.TAG }}
       node ./ci-jobs/scripts/set-tag.js
       rm -rf npm-shrinkwrap.json
       npm shrinkwrap
@@ -10,8 +9,8 @@ steps:
       git commit -n -m '${TAG}'
       git push triager
   - script: |
-      git tag v${{ parameters.TAG }}
+      git tag v${TAG}
       git push --tags triager
-    displayName: Git Tag v${{ parameters.TAG }}
+    displayName: Git Tag
   - script: npm publish --tag $(node ./ci-jobs/scripts/parse-npm-tag.js)
     displayName: Publish it

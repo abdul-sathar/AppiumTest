@@ -18,10 +18,9 @@ jobs:
       git add .
       git commit -n -m 'Release branch ${MINOR_VERSION}'
       git push --force --set-upstream triager HEAD:${MINOR_VERSION}
+      export TAG=${MINOR_VERSION}
     displayName: Create the MINOR_VERSION branch
   - template: templates/tag-and-publish.yml
-    parameters:
-      TAG: ${MINOR_VERSION}.0-fake.0
 
   # Switch back to master branch, bump the minor version and create a beta
   #- script: |

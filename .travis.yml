@@ -12,91 +12,91 @@ env:
     - CXX=g++-4.8
 jobs:
   include:
-    - stage: Tests
-      name: node 10
-      os: linux
-      script: npm run test && npm run e2e-test
-      after_script: npm run coverage
-    - stage:
-      name: node 12
-      os: linux
-      script: npm run test && npm run e2e-test
-      node_js: "12"
-    - stage:
-      name: test documentation generation
-      os: linux
-      before_script:
-        - npm install
-      script:
-        - npm run generate-docs
-
-    - stage: Sample Code
-      name: JavaScript (wd)
-      # only want to run this on the main master branch
-      if: branch = master AND type != pull_request
-      env:
-        - SAUCE_LABS=1
-      install:
-        - cd sample-code/javascript-wd
-        - npm install
-      script:
-        - npm run test
-    - stage:
-      name: Python
-      # only want to run this on the main master branch
-      if: branch = master AND type != pull_request
-      os: linux
-      language: python
-      python: "2.7"
-      env:
-        - SAUCE_LABS=1
-      before_install:
-        - pip install --upgrade pip
-      install:
-        - cd sample-code/python
-        - pip install -r requirements.txt
-        - pip install pytest-xdist
-      script:
-        - py.test -v -n 30 test
-
-    - stage: Update assets
-      name: Documentation
-      os: linux
-      if: branch = master AND type != pull_request AND !tag
-      env:
-        - GITHUB_TOKEN=$TRIAGER_BOT_TOKEN
-      before_install:
-        # install linuxbrew
-        - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-        - test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-        - echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-      install:
-        - npm install
-      before_script:
-        # do git stuff
-        - brew install hub
-        - hub --version
-        - git remote set-url origin https://triager:$TRIAGER_BOT_TOKEN@github.com/appium/appium
-        - git checkout -b generate-docs-$TRAVIS_COMMIT
-      script:
-        # Generate the docs
-        - npm run generate-docs
-        - git add .
-
-        # log the status so we know what is going on, on failure
-        - git status -s
-
-        # If docs were generated, make a PR to update the docs
-        - |
-          if [[ -n $(git status -s) ]]; then
-            git commit -a -n -m 'Update generated docs [ci skip]';
-            git push origin generate-docs-$TRAVIS_COMMIT;
-            hub pull-request -b "appium:master" -h "appium:generate-docs-$TRAVIS_COMMIT" -m "Update auto-generated docs";
-          fi
+    # - stage: Tests
+    #   name: node 10
+    #   os: linux
+    #   script: npm run test && npm run e2e-test
+    #   after_script: npm run coverage
+    # - stage:
+    #   name: node 12
+    #   os: linux
+    #   script: npm run test && npm run e2e-test
+    #   node_js: "12"
+    # - stage:
+    #   name: test documentation generation
+    #   os: linux
+    #   before_script:
+    #     - npm install
+    #   script:
+    #     - npm run generate-docs
+    #
+    # - stage: Sample Code
+    #   name: JavaScript (wd)
+    #   # only want to run this on the main master branch
+    #   if: branch = master AND type != pull_request
+    #   env:
+    #     - SAUCE_LABS=1
+    #   install:
+    #     - cd sample-code/javascript-wd
+    #     - npm install
+    #   script:
+    #     - npm run test
+    # - stage:
+    #   name: Python
+    #   # only want to run this on the main master branch
+    #   if: branch = master AND type != pull_request
+    #   os: linux
+    #   language: python
+    #   python: "2.7"
+    #   env:
+    #     - SAUCE_LABS=1
+    #   before_install:
+    #     - pip install --upgrade pip
+    #   install:
+    #     - cd sample-code/python
+    #     - pip install -r requirements.txt
+    #     - pip install pytest-xdist
+    #   script:
+    #     - py.test -v -n 30 test
+    #
+    # - stage: Update assets
+    #   name: Documentation
+    #   os: linux
+    #   if: branch = master AND type != pull_request AND !tag
+    #   env:
+    #     - GITHUB_TOKEN=$TRIAGER_BOT_TOKEN
+    #   before_install:
+    #     # install linuxbrew
+    #     - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    #     - test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    #     - echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+    #   install:
+    #     - npm install
+    #   before_script:
+    #     # do git stuff
+    #     - brew install hub
+    #     - hub --version
+    #     - git remote set-url origin https://triager:$TRIAGER_BOT_TOKEN@github.com/appium/appium
+    #     - git checkout -b generate-docs-$TRAVIS_COMMIT
+    #   script:
+    #     # Generate the docs
+    #     - npm run generate-docs
+    #     - git add .
+    #
+    #     # log the status so we know what is going on, on failure
+    #     - git status -s
+    #
+    #     # If docs were generated, make a PR to update the docs
+    #     - |
+    #       if [[ -n $(git status -s) ]]; then
+    #         git commit -a -n -m 'Update generated docs [ci skip]';
+    #         git push origin generate-docs-$TRAVIS_COMMIT;
+    #         hub pull-request -b "appium:master" -h "appium:generate-docs-$TRAVIS_COMMIT" -m "Update auto-generated docs";
+    #       fi
     - stage:
       name: Bundle
       # only want to run this on the main master branch
-      if: branch = master AND type != pull_request
+      # if: branch = master AND type != pull_request
       os:
         - osx
         - osx_image: xcode9.4
@@ -107,6 +107,7 @@ jobs:
       before_install:
         - gcc --version
         - brew upgrade carthage
+        - git checkout isaac-test-bundle
       install:
         # Install prod dependencies
         - npm install

@@ -123,6 +123,8 @@ jobs:
         - cp Cartfile.resolved Carthage
         - mkdir -p ./Resources/WebDriverAgent.bundle
         - popd
+
+        - npm ls
       before_script:
         # Build the assets
         - npm run build

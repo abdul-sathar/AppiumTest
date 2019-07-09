@@ -41,7 +41,7 @@
     "npm-shrinkwrap.json"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.5.3",
     "appium-android-driver": "^4.0.0",
     "appium-base-driver": "3.x",
     "appium-espresso-driver": "^1.0.0",

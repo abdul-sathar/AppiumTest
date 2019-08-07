@@ -48,7 +48,7 @@
     "appium-fake-driver": "^0.x",
     "appium-ios-driver": "4.x",
     "appium-mac-driver": "1.x",
-    "appium-support": "2.x",
+    "appium-support": "^2.32.0",
     "appium-tizen-driver": "^1.1.1-beta.4",
     "appium-uiautomator2-driver": "1.x",
     "appium-windows-driver": "1.x",

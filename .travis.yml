@@ -58,3 +58,16 @@ jobs:
         - pip install pytest-xdist
       script:
         - py.test -v -n 30 test
+    - stage:
+      name: Ruby
+      # only want to run this on the main master branch
+      # if: branch = master AND type != pull_request
+      env:
+        - SAUCE_LABS=1
+      language: ruby
+      rvm: 2.6
+      install:
+        - cd sample-code/ruby
+        - bundle install
+      script:
+        - rspec spec/*_spec.rb
